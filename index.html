@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test Work</title>
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/main.min.css">
+  <!-- Sharing -->
+
+  <!-- Fav -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+
+<body>
+<div class="b-preloader">
+  <img src="./img/loader.gif" alt="" class="b-preloader__img">
+</div>
+<header class="b-header" id="header">
+  <div class="container">
+    <div class="b-header__nav b-nav">
+      <a href="#main" class="b-logo b-nav__logo">
+        <h1 class="b-logo__title">Богдановский <span class="b-logo__subtitle">карьер</span></h1>
+      </a>
+      <div class="b-nav-menu b-nav__menu">
+        <div class="b-nav-menu__links">
+          <a href="#production" class="b-nav-menu__link">Производство</a>
+          <a href="#address" class="b-nav-menu__link">Адрес Карьера</a>
+        </div>
+        <div class="b-button b-nav-menu__button js-show-popup">
+          <span class="b-button__content">Заказать звонок</span>
+        </div>
+      </div>
+      <button class="b-burger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="b-main" id="main">
+  <div class="swiper-container js-main-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/slide-1.jpg" alt="" class="b-main__slide">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/slide-2.jpg" alt="" class="b-main__slide">
+      </div>
+    </div>
+    <div class="swiper-button-prev">
+
+    </div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+<main>
+  <div class="float-left">
+
+    <section class="b-production pt-84" id="production">
+      <div class="b-production__content">
+        <h2 class="title b-production__title bLine">Производим и продаем щебень</h2>
+        <div class="b-production__info">
+          <p class="b-production__text text">Площадь участка 96,1 га. Щебень и гравий из плотных пород для строительных
+            работ.
+            Прочность соответствует марке 800(ДР-12). Запасы по гравию 28%. Пески и пески-отсевы Богдановского-2 участка
+            могут быть использованы в качестве строительного и дорожного материала. Мощность толщи 12-22,1 метра.
+            Уровень
+            грунтовых вод расположен ниже подошвы полезной толщи. Концентрация радионуклидов соответствует 1 классу СП
+            2.6.1.758-99.</p>
+          <p class="b-production__text text"><strong>Щебень 20×40</strong> пригоден в производстве бетона и изготовлении
+            конструкций из него, для дорожного строительства при закладке фундамента зданий, при возведении
+            производственных всех видов сооружений и др.</p>
+        </div>
+      </div>
+    </section>
+    <section class="b-address pt-84" id="address">
+      <h2 class="title b-address__title bLine">Адрес Карьера</h2>
+      <div class="b-address__info">
+        <div class="b-address__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="26" viewBox="0 0 21 26">
+            <g>
+              <g>
+                <path fill="#ffea00"
+                      d="M21.083 10.681c0 2.627-2.198 6.894-2.198 6.894s-5.141 8.58-8.175 8.435c-3.034.145-8.175-8.435-8.175-8.435s-2.52-4.267-2.52-6.894C.014 4.775 4.802-.015 10.71-.015s10.373 4.79 10.373 10.696zm-5.738 0a4.85 4.85 0 1 0-9.701 0 4.85 4.85 0 0 0 9.701 0z"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <span class="b-address__text text">поселок Ханино, Суворовский район, Тульская область, Россия</span>
+      </div>
+    </section>
+  </div>
+  <aside class="b-aside">
+    <div class="b-aside__container">
+      <h2 class="title b-aside__title">Контакты</h2>
+      <div class="b-aside__contacts">
+        <span class="b-aside__info"><strong>Звоните:</strong></span>
+        <div class="b-aside__phone">
+          <a href="#">8 (800) <strong>555-93-99</strong></a>
+        </div>
+        <div class="b-aside__phone">
+          <a href="#">8 (495) <strong>638-55-85</strong></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <section class="b-map" id="map"></section>
+</main>
+<footer class="b-footer" id="footer">
+  <span class="b-footer__copy">&copy; 2015, Copyright</span>
+</footer>
+<section class="b-popup b-popup--send">
+  <div class="b-popup__overlay js-close-popup"></div>
+  <div class="b-popup__content">
+    <span class="b-popup__close js-close-popup">✖</span>
+    <h2 class="title b-popup__title">Связаться</h2>
+    <h3 class="text b-popup__text">Оставьте Ваш вопрос и мы свяжемся с Вами!</h3>
+    <form class="b-popup__form b-form js-send-form">
+      <label class="b-form__label">
+        <input type="text" class="b-form__input" name="name" placeholder="Введите Ваше имя" required>
+        <span class="b-form__error">
+                        </span>
+      </label>
+      <label class="b-form__label">
+        <input type="text" class="b-form__input" name="phone" placeholder="Введите Ваш номер телефона" required>
+        <span class="b-form__error">
+                        </span>
+      </label>
+      <button class="b-button b-button--revert b-form__button" type="submit">
+        <span class="b-button__content">Отправить</span>
+      </button>
+    </form>
+
+
+  </div>
+</section>
+<section class="b-popup b-popup--thanks">
+  <div class="b-popup__overlay js-close-popup"></div>
+  <div class="b-popup__content b-popup__content--center">
+    <span class="b-popup__close js-close-popup">✖</span>
+    <h2 class="title b-popup__title">Спасибо!</h2>
+    <h3 class="text b-popup__text">Спасибо за оставленную заявку, в ближайшее время мы с Вам свяжемся</h3>
+
+  </div>
+</section>
+<script>
+  function initMap() {
+
+    let place = {lat: 54.206996, lng: 36.620595};
+    let map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: place,
+      disableDefaultUI: true
+    });
+
+    var image = './img/marker.png';
+    var marker = new google.maps.Marker({
+      position: place,
+      map: map,
+      icon: image,
+      animation: google.maps.Animation.DROP,
+      title: 'поселок Ханино'
+    });
+  }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvZ0jrwQ5yHlyKVsHVfgs_uvawZDe_F8k&callback=initMap"></script>
+<script src="js/scripts.min.js"></script>
+</body>
+</html>
