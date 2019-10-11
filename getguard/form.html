@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>GETGUARD</title>
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Include FontAwesome 5-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <!-- Main Style-->
+  <link rel="stylesheet" href="css/main.min.css">
+  <!-- Sharing-->
+  <!-- Fav-->
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+</head>
+<body>
+  <div class="page page--form">
+    <header class="b-header" id="header">
+      <div class="container">
+        <div class="b-header__container"><a class="b-logo" href="index.html"><img class="b-logo__img" src="img/logo.svg"></a>
+          <nav class="b-nav b-header__nav">
+            <div class="b-nav__items"><a class="b-nav__link" href="/index.html">Возможности</a><a class="b-nav__link" href="/prices.html">Стоимость услуг</a><a class="b-nav__link" href="/about.html">О нас</a></div>
+            <button class="b-button b-button--main b-nav__button js-show-popup"><span class="b-button__content">Заказать</span></button>
+          </nav>
+          <div class="b-burger"><span></span><span></span></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="b-popup b-popup--send b-popup--active">
+        <div class="b-popup__content b-popup__content--dark">
+          <div class="b-popup__row b-popup__row--active">
+            <div class="b-popup__header">
+              <div class="b-popup__info"><small class="b-popup__step">Шаг 1</small>
+                <h3 class="b-popup__name">Выберите опции</h3>
+              </div>
+              <button class="b-button b-button--change b-popup__change  js-change-popup"><span class="b-button__content">изменить</span></button>
+            </div>
+            <div class="b-popup__prev">
+              <p class="b-popup__text b-popup--employees"></p>
+              <p class="b-popup__text b-popup--date"></p>
+              <p class="b-popup__text b-popup--time"></p>
+            </div>
+            <form class="b-popup__form">
+              <div class="b-popup__label"><span class="b-popup__hidden">Введите кол-во сотрудников</span>
+                <select class="b-popup__input js-select" name="employees" data-val="employees">
+                  <option value="">Введите кол-во сотрудников</option>
+                  <option>от 1 - 2х сотрудников</option>
+                  <option>от 2 - 3х сотрудников</option>
+                  <option>от 3 - 4х сотрудников</option>
+                </select><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <div class="b-popup__label"><span class="b-popup__hidden">Выберите дату</span>
+                <input class="b-popup__input js-date" name="date" placeholder="Выберите дату" data-position="bottom right" type="text" autocomplete="off" data-val="date"><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <div class="b-popup__label"><span class="b-popup__hidden">Выбирите колличество часов</span>
+                <select class="b-popup__input js-select" name="time" data-val="time">
+                  <option value="">Выбирите колличество часов</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <button class="b-popup__button b-button js-next-step" type="submit"><span class="b-button__content">Далее</span></button>
+            </form>
+          </div>
+          <div class="b-popup__row">
+            <div class="b-popup__header">
+              <div class="b-popup__info"><small class="b-popup__step">Шаг 2</small>
+                <h3 class="b-popup__name">Адрес</h3>
+              </div>
+              <button class="b-button b-button--change b-popup__change  js-change-popup"><span class="b-button__content">изменить</span></button>
+            </div>
+            <div class="b-popup__prev">
+              <p class="b-popup__text b-popup--address"></p>
+            </div>
+            <form class="b-popup__form">
+              <div class="b-popup__label"><span class="b-popup__hidden">Введите адрес</span>
+                <input class="b-popup__input" name="address" placeholder="Введите адрес" autocomplete="off" data-val="address"><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <button class="b-popup__button b-button js-next-step" type="submit"><span class="b-button__content">Далее</span></button>
+            </form>
+          </div>
+          <div class="b-popup__row">
+            <div class="b-popup__header">
+              <div class="b-popup__info"><small class="b-popup__step">Шаг 3</small>
+                <h3 class="b-popup__name">Контакты</h3>
+              </div>
+              <button class="b-button b-button--change b-popup__change  js-change-popup"><span class="b-button__content">изменить</span></button>
+            </div>
+            <div class="b-popup__prev">
+              <p class="b-popup__text b-popup--name"></p>
+              <p class="b-popup__text b-popup--phone"></p>
+              <p class="b-popup__text b-popup--email"></p>
+            </div>
+            <form class="b-popup__form">
+              <div class="b-popup__label"><span class="b-popup__hidden">Введите имя</span>
+                <input class="b-popup__input" name="name" placeholder="Введите имя" type="text" autocomplete="off" data-val="name"><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <div class="b-popup__label"><span class="b-popup__hidden">Введите телефон</span>
+                <input class="b-popup__input" name="phone" placeholder="Введите телефон" autocomplete="off" data-val="phone" type="text"><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <div class="b-popup__label"><span class="b-popup__hidden">Введите email</span>
+                <input class="b-popup__input" name="email" placeholder="Введите email" autocomplete="off" data-val="email" type="text"><span class="b-popup__error">Ошибка ввода</span>
+              </div>
+              <label class="b-radio js-radio">
+                <input class="b-radio__input" type="checkbox" name="isPersonal" value=""><span class="b-radio__text">Я соглашаюсь с обработкой персональныз данных</span>
+              </label>
+              <label class="b-radio js-radio">
+                <input class="b-radio__input" type="checkbox" name="isUser" value=""><span class="b-radio__text">Я соглашаюсь с пользовательским соглашением</span>
+              </label>
+              <button class="b-popup__button b-button js-next-step" type="submit"><span class="b-button__content">Оформить заказ</span></button>
+            </form>
+          </div>
+          <div class="b-popup__row">
+            <div class="b-popup__header">
+              <div class="b-popup__info"><small class="b-popup__step">Шаг 4</small>
+                <h3 class="b-popup__name">Способ оплаты</h3>
+              </div>
+              <div class="b-popup__info b-popup__sum"><small class="b-popup__step">Итоговая сумма</small>
+                <h3 class="b-popup__name">5 000 РУБ</h3>
+              </div>
+            </div>
+            <div class="b-popup__pay">
+              <div class="b-popup__card js-close-form">
+                <p class="b-popup__cardName">Наличные</p>
+              </div>
+              <div class="b-popup__card js-close-form">
+                <p class="b-popup__cardName">Банковская карта</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-popup b-popup--thanks">
+        <div class="b-popup__overlay">
+          <div class="b-popup__content b-popup__content--thanks">
+            <div class="b-popup__icon">
+              <svg width="25" height="31" viewbox="0 0 25 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.3684 1C16.1579 3.125 19.8211 5.375 23.7368 4.75L22.4737 19.75C20.3263 25.75 15.5263 26.125 12.3684 29.75C9.21053 26.125 4.41053 25.75 2.26316 19.75L1 4.75C4.91579 5.375 8.57895 3.125 12.3684 1Z" stroke="#868686" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h2 class="b-popup__title">ваша заявка оформлена</h2><a class="b-button b-popup__link" href="/index.html"><span class="b-button__content">на главную</span></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/scripts.min.js"></script>
+  </div>
+</body>

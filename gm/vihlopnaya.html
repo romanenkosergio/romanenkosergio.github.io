@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+  <meta name="description" content=""/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/main.min.css"/>
+  <!-- Sharing-->
+  <!-- Fav-->
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <!--Yandex Map-->
+  <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=0a7ad2dd-daec-4dac-84d8-e01e38600600&amp;lang=ru_RU"></script>
+  <script>
+    /** Init Map**/
+    ymaps.ready(init);
+    function init() {
+      var center = [55.6711, 37.433691]
+      var myMap = new ymaps.Map("map", {
+        center: center,
+        zoom: 16
+      })
+      var myPlacemark = new ymaps.Placemark(
+        [55.668781, 37.4347133], {
+          balloonContent: `<div class="b-tooltip">
+              <div class="b-tooltip__row">
+                <div class="b-tooltip__icon"><img src="img/map/metro.svg"/></div><span class="b-tooltip__text b-tooltip__text--metro">«Озёрная»</span>
+              </div>
+              <div class="b-tooltip__row">
+                <div class="b-tooltip__icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div><span class="b-tooltip__text b-tooltip__text--address">ул. Озёрная д. 46 к.2 стр.2</span>
+              </div>
+              <div class="b-tooltip__row">
+                <div class="b-tooltip__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div><span class="b-tooltip__text b-tooltip__text--time">с 9:00 до 20:00 без выходных</span>
+              </div>
+              <div class="b-tooltip__row">
+                <div class="b-tooltip__icon"><i class="fa fa-phone" aria-hidden="true"></i></div><a class="b-contacts__phone" href="tel:+74956486430">+7 (495) <span class="b-contacts__phone--large"> 648-64-30</span></a>
+              </div>
+              <button class="b-button b-button--xs b-button--accent b-tooltip__button js-show-popup" type="button"><span class="b-button__content">перезвонить мне</span></button>
+              <div class="b-tooltip__row b-tooltip__row--print">
+                <div class="b-tooltip__icon"><i class="fa fa-print" aria-hidden="true"></i></div><a class="b-tooltip__text b-tooltip__text--print" href="#">Распечатать схему проезда</a>
+              </div>
+              <div class="b-tooltip__row b-tooltip__row--mob">
+                <div class="b-tooltip__icon">
+                  <svg width="9" height="19" viewbox="0 0 9 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.37891 11.3594L2.32031 18.25H0.0703125L3.44531 10.8672C1.6875 9.97656 0.808594 8.32422 0.808594 5.91016C0.808594 4.69141 1.04297 3.64844 1.51172 2.78125C1.98047 1.96094 2.60156 1.33984 3.375 0.917969C4.17188 0.472656 5.0625 0.25 6.04688 0.25H8.92969V18.25H6.99609V11.3594H5.37891ZM6.99609 1.86719H5.97656C5.08594 1.86719 4.37109 2.17188 3.83203 2.78125C3.19922 3.48438 2.88281 4.52734 2.88281 5.91016C2.88281 7.26953 3.1875 8.26562 3.79688 8.89844C4.3125 9.46094 5.02734 9.74219 5.94141 9.74219H6.99609V1.86719Z" fill="#C4C4C4"></path>
+                  </svg>
+                </div><a class="b-tooltip__text b-tooltip__text--print" href="#">Посмотреть на карте</a>
+              </div>
+              <div class="b-tooltip__row b-tooltip__row--big">
+                <svg width="192" height="52" viewbox="0 0 192 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.8744 28.0358L17.8237 33.387H20.7422C20.2753 35.9463 18.7576 37.226 16.1894 37.226C14.555 37.226 13.3876 36.6443 12.6872 35.5973C11.9867 34.434 11.9867 32.34 12.5704 29.3154C13.1541 26.1745 13.9713 24.0805 15.022 22.9172C16.0726 21.7539 17.4735 21.1723 19.3413 21.1723C20.6255 21.1723 21.6761 21.5213 22.4933 22.1029C23.3105 22.6846 23.8942 23.6152 24.2444 24.8949H31.0154L32.8832 15.0067H26.1123L25.762 16.868C24.1277 15.123 21.5594 14.3087 18.0572 14.3087C13.8546 14.3087 10.1189 15.7047 6.73341 18.3803C3.34794 21.0559 1.24662 24.6622 0.312697 28.9664C-0.271004 31.8747 -0.0375235 34.434 1.01314 36.877C1.94706 39.2036 3.69816 40.9485 6.1497 41.9955C8.60125 43.0425 11.2863 43.6242 14.555 43.6242C16.6563 43.6242 18.7576 43.2752 20.7422 42.5772C22.7268 41.8792 24.5946 40.8322 26.1123 39.3199C27.7466 37.8076 28.914 36.4116 29.6145 34.8993C30.3149 33.387 31.0154 31.0604 31.5991 28.0358H18.8744ZM60.9008 14.8904L54.5969 25.8255L52.4955 14.8904H35.4515L34.1673 21.6376H36.3854L33.5836 36.2953H31.3656L30.0814 43.0425H41.055L42.3391 36.2953H40.1211L43.0396 20.7069L47.2422 43.0425H51.4449L64.2863 20.5906L61.2511 36.2953H59.033L57.7488 43.0425H72.4581L73.7422 36.2953H71.4074L74.2092 21.6376H76.4273L77.7114 14.8904H60.9008ZM77.3612 37.5749H91.837L93.4713 28.8501H78.9956L77.3612 37.5749ZM116.002 21.0559C117.17 21.0559 117.987 21.4049 118.804 22.1029C119.504 22.8009 119.971 23.8479 120.088 25.1275H127.092L129.077 14.8904H122.306L121.956 16.7517C120.205 15.123 117.637 14.3087 114.368 14.3087C110.282 14.3087 106.663 15.7047 103.628 18.613C100.476 21.4049 98.6079 24.8949 97.7907 28.9664C96.9735 33.038 97.674 36.4116 99.7753 39.2036C101.877 41.9955 105.612 43.3915 110.982 43.3915C114.952 43.3915 118.22 42.4608 120.905 40.4832C123.474 38.6219 125.458 36.0626 126.626 33.038L119.738 30.4787C118.22 34.5503 116.119 36.6443 113.317 36.6443C110.165 36.6443 109.115 33.9687 110.048 28.7338C110.866 23.7315 112.967 21.0559 116.002 21.0559ZM160.48 15.5884L149.39 20.4743L148.806 23.4989H146.238L145.07 29.6644H147.639L147.055 32.9217C146.588 35.481 146.238 37.226 146.238 38.0403C146.238 38.5056 146.238 38.9709 146.355 39.4362C146.471 39.9016 146.588 40.2506 146.822 40.8322C147.172 41.6465 147.989 42.3445 148.923 42.9262C149.974 43.3915 151.141 43.6242 152.775 43.6242C153.943 43.6242 155.344 43.3915 156.744 43.0425C158.029 42.6935 159.079 42.3445 159.896 41.8792L161.064 35.83C160.013 36.2953 159.196 36.4116 158.496 36.4116C157.795 36.4116 157.328 36.179 157.211 35.83C157.095 35.3647 157.095 34.5503 157.328 33.387L158.029 29.5481H162.115L163.282 23.3825H159.196L160.48 15.5884ZM181.844 23.3825L180.676 29.5481H182.544L177.874 37.226L175.89 29.5481H178.108L179.275 23.3825H165.85L164.683 29.5481H166.2L170.987 44.0895L169.586 46.0671H166.317L165.15 52H173.789L188.848 29.5481H190.833L192 23.3825H181.844ZM144.137 7.56152L143.67 6.63087L138.183 5.46756L137.366 6.16555L134.564 18.264L141.918 19.7763L144.137 7.56152ZM142.969 4.07159L143.086 2.44295L143.553 1.27964L143.67 0.814318L140.518 0L140.401 0.581656V1.8613L139.817 3.3736L139.584 5.11857L142.502 5.81655L142.969 4.07159ZM143.203 21.2886C143.319 20.9396 143.086 20.7069 142.736 20.5906L133.28 18.613C132.93 18.613 132.696 18.7293 132.579 19.0783L132.463 19.7763L130.945 19.4273L130.244 22.6846C134.797 23.6152 139.467 24.5459 144.02 25.5928L144.72 22.3356L143.203 21.9866V21.2886ZM142.269 25.9418L131.645 23.7315L131.412 24.6622L130.478 24.4295L129.194 30.4787L141.685 33.038L142.969 26.9888L142.035 26.7561L142.269 25.9418ZM130.478 31.991C130.711 32.1074 130.711 32.34 130.711 32.5727C130.711 32.8054 130.478 32.9217 130.244 33.038L130.128 33.387C130.361 33.5034 130.361 33.736 130.361 33.9687C130.361 34.2013 130.128 34.3177 129.894 34.434L129.778 34.783C130.011 34.8993 130.011 35.132 130.011 35.3647C130.011 35.5973 129.778 35.7136 129.544 35.83L129.661 36.0626C129.894 36.179 129.894 36.4116 129.894 36.6443C129.894 36.877 129.661 36.9933 129.427 37.1096L129.311 37.4586C129.544 37.5749 129.544 37.8076 129.544 38.0403C129.544 38.2729 129.311 38.3893 129.077 38.5056L128.96 38.8546C129.194 38.9709 129.194 39.2036 129.194 39.4362C129.194 39.6689 128.96 39.7852 128.727 39.9016L128.61 40.2506C128.844 40.3669 128.844 40.5996 128.844 40.8322C128.844 41.0649 128.61 41.1812 128.377 41.2975L128.143 42.6935C128.377 42.8098 128.727 42.9262 128.96 43.1588V43.2752C128.61 44.6711 129.194 45.6018 130.945 45.9508L133.747 46.5324L133.98 45.6018L131.178 45.0201C130.128 44.7875 129.777 44.3221 129.894 43.6242C130.711 43.9731 131.412 44.2058 132.229 44.3221L132.112 44.9038L133.28 45.1365L133.396 44.5548C134.797 44.7875 136.315 44.9038 137.716 44.7875L137.949 43.3915C137.716 43.2752 137.716 43.0425 137.716 42.8098C137.716 42.5772 137.949 42.4609 138.183 42.3445L138.3 41.9955C138.066 41.8792 138.066 41.6465 138.066 41.4139C138.066 41.1812 138.3 41.0649 138.533 40.9485L138.65 40.5996C138.416 40.4832 138.416 40.2506 138.416 40.0179C138.416 39.7852 138.65 39.6689 138.883 39.5526L139 39.2036C138.767 39.0872 138.767 38.8546 138.767 38.6219C138.767 38.3893 139 38.2729 139.233 38.1566L139.35 37.8076C139.117 37.6913 139.117 37.4586 139.117 37.226C139.117 36.9933 139.35 36.877 139.584 36.7606L139.7 36.4116C139.467 36.2953 139.467 36.0626 139.467 35.83C139.467 35.5973 139.7 35.481 139.934 35.3647L140.051 35.0157C139.817 34.8993 139.817 34.6667 139.817 34.434C139.817 34.2013 140.051 34.085 140.284 33.9687L140.401 33.6197L130.828 31.6421L130.478 31.991Z" fill="white"></path>
+                </svg>
+              </div>
+            </div>
+            `
+        }
+      )
+      myMap.geoObjects.add(myPlacemark);
+      myMap.behaviors.disable('scrollZoom');
+      myPlacemark.balloon.open();
+    }
+  </script>
+</head>
+</html>
+<body>
+<header class="b-header" id="header">
+  <div class="container b-header__container"><a class="b-logo b-logo--large b-header__logo" href="#"><img class="b-logo__img" src="img/logo.svg"/><span class="b-logo__text">ремонт автомобилей Шевроле</span></a>
+    <nav class="b-nav b-header__nav">
+      <div class="b-nav__menu"><a class="b-nav__link uppercase" href="#about">О компании</a><a class="b-nav__link uppercase" href="#prices">Услуги</a><a class="b-nav__link uppercase" href="#calculator">Калькулятор</a><a class="b-nav__link uppercase" href="#prices">Цены</a><a class="b-nav__link uppercase" href="#reviews">Отзывы</a><a class="b-nav__link uppercase" href="#contacts">Контакты</a>
+      </div>
+      <button class="b-button b-button--mob b-button--main b-nav__button js-show-popup" type="button"><span class="b-button__content">записаться на ремонт</span></button>
+      <div class="b-nav__socials"><a class="b-footer__social b-footer__social--instagram" href="#"><i class="fa fa-instagram"></i></a><a class="b-footer__social b-footer__social--youtube" href="#"><i class="fa fa-youtube-play"></i></a><a class="b-footer__social b-footer__social--telegram" href="#"><i class="fa fa-paper-plane"></i></a><a class="b-footer__social b-footer__social--vk" href="#"><i class="fa fa-vk"></i></a>
+      </div>
+    </nav>
+    <div class="b-header__contacts b-contacts"><span class="b-contacts__date">ежедневно с 9:00 до 20:00</span><a class="b-contacts__phone" href="tel:+74956486430">+7 (495) <span class="b-contacts__phone--large"> 648-64-30</span></a><a class="b-contacts__link js-show-popup" href="#">Перезвоните мне</a>
+    </div>
+    <div class="b-header__mobile"><a class="b-header__phone" href="tel:+74956486430"><i class="fa fa-phone"></i></a>
+      <button class="b-burger" type="button"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="b-main" style="background: url('img/main/main-bg-vihlop.jpg')">
+    <div class="container b-main__container">
+      <h1 class="b-main__title uppercase">Профильный центр</h1>
+      <h3 class="b-main__subtitle uppercase">по ремонту стартеров и генераторов Chevrolet</h3>
+      <p class="b-main__info">Нужен качественный и недорогой ремонт стартеров и генераторов Шевроле в Москве с гарантией на работу до 12 месяцев — обращайтесь в сервисный центр GM-City.</p>
+      <button class="b-button b-button--medium b-button--main b-main__button js-show-popup" type="button"><span class="b-button__content">Запись на бесплатную диагностику</span></button>
+    </div>
+  </section>
+  <section class="b-about" id="about">
+    <div class="container">
+      <div class="b-about__info">
+        <p class="b-about__text">У нас работают опытные мастера. Они ежедневно перебирают и восстанавливают АКПП Chevrolet. В том числе редких моделей и коллекционных авто. И так уже семь лет! За это время в CM-City восстановили работоспособность более 1000 коробок-автомат. Без нареканий и претензий заказчиков и постоянных клиентов.</p>
+        <p class="b-about__text">Гарантируем диагностику на современном оборудовании, высокое качество ремонтно-восстановительных работ, тестирование агрегата на работу под нагрузкой.</p>
+        <p class="b-about__text">Мы имеем подменный фонд комплектующих для ремонта АКПП Шевроле Круз (1.6, 1.8), Каптива, Орландо, Авео (т300), Лачетти и других распространённых моделей. Это сэкономит вам время на поиск запчастей, а также деньги: мы работаем напрямую с производителями, минуя дистрибьюторов и посредников. Если у вас редкая модель или комплектация Сhevrolet, в течение дня мы найдём и доставим нужный агрегат.</p>
+        <p class="b-about__text b-about__text--hidden">Мы имеем подменный фонд комплектующих для ремонта АКПП Шевроле Круз (1.6, 1.8), Каптива, Орландо, Авео (т300), Лачетти и других распространённых моделей. Это сэкономит вам время на поиск запчастей, а также деньги: мы работаем напрямую с производителями, минуя дистрибьюторов и посредников. Если у вас редкая модель или комплектация Сhevrolet, в течение дня мы найдём и доставим нужный агрегат.</p>
+      </div>
+      <button class="b-about__button b-button b-button--small b-button--accent js-show-text" type="button"><span class="b-button__content">подробнее</span>
+        <svg width="14" height="8" viewbox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.3973 1.28571C13.3973 1.17857 13.3438 1.05803 13.2634 0.977678L12.5938 0.308035C12.5134 0.227678 12.3929 0.174107 12.2857 0.174107C12.1786 0.174107 12.058 0.227678 11.9777 0.308035L6.71429 5.57143L1.45089 0.308035C1.37054 0.227678 1.25 0.174107 1.14286 0.174107C1.02232 0.174107 0.915179 0.227678 0.834822 0.308035L0.165179 0.977678C0.0848215 1.05803 0.0312501 1.17857 0.0312501 1.28571C0.0312501 1.39286 0.0848215 1.51339 0.165179 1.59375L6.40625 7.83482C6.48661 7.91518 6.60714 7.96875 6.71429 7.96875C6.82143 7.96875 6.94196 7.91518 7.02232 7.83482L13.2634 1.59375C13.3438 1.51339 13.3973 1.39286 13.3973 1.28571Z" fill="#908451"></path>
+        </svg>
+      </button>
+    </div>
+  </section>
+  <section class="b-calculator" id="calculator">
+    <div class="container b-calculator__container">
+      <h2 class="b-calculator__title">Рассчитайте стоимость ремонта стартеров и генераторов онлайн</h2><span class="b-calculator__subtitle">Чем быстрее Ваш автомобиль попадет в автосервис GM-City, тем быстрее решаться все проблемы с подвеской</span>
+      <form class="b-calculator__form b-form">
+        <div class="b-calculator__column">
+          <h4 class="b-calculator__question">В каком состоянии Ваш автомобиль?</h4>
+          <div class="b-calculator__radio-body">
+            <div class="b-calculator__item">
+              <label class="b-radio b-calculator__label">
+                <input class="b-calculator__radio b-radio__input" type="radio" name="condition"/><span class="b-calculator__radio-text b-radio__text">Машина на ходу</span>
+              </label>
+            </div>
+            <div class="b-calculator__item">
+              <label class="b-radio b-calculator__label">
+                <input class="b-calculator__radio b-radio__input" type="radio" name="condition"/><span class="b-calculator__radio-text b-radio__text">Машина НЕ на ходу</span>
+              </label>
+            </div>
+            <div class="b-calculator__item">
+              <label class="b-radio b-calculator__label">
+                <input class="b-calculator__radio b-radio__input" type="radio" name="condition"/><span class="b-calculator__radio-text b-radio__text">Коробка снята</span>
+              </label>
+            </div>
+            <div class="b-calculator__item">
+              <label class="b-radio b-calculator__label">
+                <input class="b-calculator__radio b-radio__input" type="radio" name="condition"/><span class="b-calculator__radio-text b-radio__text">Машина в другом автосервисе</span>
+              </label>
+            </div>
+          </div>
+          <div class="b-calculator__action"><span class="b-calculator__offer">Минимальная стоимость <span> ремонта стартеров и генераторов</span>  «под ключ»</span>
+            <div class="b-calculator__prices"><span class="b-calculator__price-old">16 000 руб.</span><span class="b-calculator__price-new">12 000<sub>руб.</sub></span></div>
+          </div>
+        </div>
+        <div class="b-calculator__column">
+          <h4 class="b-calculator__question">Подробная информация</h4>
+          <div class="b-calculator__inputs-body">
+            <div class="b-calculator__row">
+              <select class="b-form__select b-calculator__select js-select" name="car">
+                <option value="Марка авто">Марка авто</option>
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Toyota">Toyota</option>
+              </select>
+              <select class="b-form__select b-calculator__select js-select" name="year">
+                <option value="Год выпуска">Год выпуска</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+              </select>
+            </div>
+            <div class="b-calculator__row">
+              <input class="b-form__input b-calculator__input" placeholder="Ваше имя" name="name"/>
+              <input class="b-form__input b-calculator__input" placeholder="Номер телефона для связи" name="phone"/>
+            </div>
+            <textarea class="b-calculator__textarea b-form__textarea" placeholder="Дополнительные пожелания" name="wish"></textarea>
+            <div class="b-calculator__action b-calculator__action--mob"><span class="b-calculator__offer">Минимальная стоимость <span> ремонта стартера </span> и генератора «под ключ»</span>
+              <div class="b-calculator__prices"><span class="b-calculator__price-old">16 000 руб.</span><span class="b-calculator__price-new">12 000<sub>руб.</sub></span></div>
+            </div>
+          </div>
+          <button class="b-button b-button--large b-button--main b-calculator__button" type="button"><span class="b-button__content">Рассчитать стоимость ремонта</span></button>
+          <label class="b-checkbox b-policy">
+            <input class="b-checkbox__input" type="checkbox" name="policy"/>
+            <div class="b-checkbox__text b-checkbox__text--light"><span>Нажимая на кнопку, я соглашаюсь с условиями&nbsp;</span><a href="#">политики конфиденциальности.</a></div>
+          </label>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="b-advantages">
+    <div class="container">
+      <div class="b-advantages__content">
+        <h2 class="b-advantages__title">7 причин, чтобы отремонтировать стартер и генератор в GM-City</h2>
+        <div class="swiper-container js-advantages-slider js-mob-slider">
+          <div class="swiper-wrapper b-advantages__items">
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/1.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Опыт ремонта стартера и генератора Chevrolet — более 7 лет</span>
+                <p class="b-advantages__text">Предельно быстро установим причину неисправности вашего стартера и генератора.</p>
+              </div>
+            </div>
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/2.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Стоимость ремонта стартера и генератора — от 12 000 рублей</span>
+                <p class="b-advantages__text">Гарантируем честные низкие цены и оперативную оценку стоимости ремонта.</p>
+              </div>
+            </div>
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/3.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Все запчасти для ремонта стартера и генератора у нас</span>
+                <p class="b-advantages__text">На нашем складе есть всё необходимое. Вам не придётся ждать.</p>
+              </div>
+            </div>
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/4.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Увидеть причину поломки стартера и генератора — легко</span>
+                <p class="b-advantages__text">Вы можете лично наблюдать за ходом ремонта.</p>
+              </div>
+            </div>
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/5.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Оплата — любым удобным способом</span>
+                <p class="b-advantages__text">Мы принимаем все виды оплаты: наличными, банковскими картами,перечислением.</p>
+              </div>
+            </div>
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/6.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Гарантия качественного ремонта — 1 год</span>
+                <p class="b-advantages__text">Автосервис GM-City гарантирует работу стартера и генератора после ремонта на срок до 12 месяцев без ограничения пробега.</p>
+              </div>
+            </div>
+            <div class="swiper-slide b-advantages__item">
+              <div class="b-advantages__icon"><img src="img/advantages/7.svg"/></div>
+              <div class="b-advantages__info"><span class="b-advantages__name">Доставка автомобиля на эвакуаторе — за наш счёт</span>
+                <p class="b-advantages__text">Предоставляем бесплатный эвакуатор при условии ремонта АКПП в автосервисе GM-City.</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination--blue"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="b-prices" id="prices">
+    <div class="container">
+      <div class="b-prices__info">
+        <div class="b-prices__col">
+          <div class="b-prices__title"><span class="b-prices__title--large">цены</span><span class="b-prices__title--small">на услуги по ремонту стартера и генератора</span></div>
+          <div class="b-prices__title b-prices__title--mob">цены на услуги по ремонту стартера и генератора</div>
+          <div class="b-prices__text">Срок ремонта стартеров и генераторов Шевроле зависит от характера и тяжести поломки. Работа может занять от трёх часов до трёх дней. Точное время определяет мастер-приёмщик после диагностики и разборки агрегата.</div>
+        </div>
+        <div class="b-prices__col">
+          <div class="b-prices__item">
+            <div class="b-prices__name">Ремонт ГРМ</div>
+            <div class="b-prices__price">от 6 000Р.</div>
+          </div>
+          <div class="b-prices__item">
+            <div class="b-prices__name">Ремонт ГБЦ</div>
+            <div class="b-prices__price">от 8 000Р.</div>
+          </div>
+          <div class="b-prices__item">
+            <div class="b-prices__name">Капитальный ремонт двигателя</div>
+            <div class="b-prices__price">от 15 000Р.</div>
+          </div>
+          <div class="b-prices__item">
+            <div class="b-prices__name">Ремонт гидроблока</div>
+            <div class="b-prices__price">от 8 000Р.</div>
+          </div>
+        </div>
+      </div>
+      <div class="b-prices__form-block" style="background: url('img/prices/prices-bg7.jpg')">
+        <form class="b-form b-prices__form">
+          <h3 class="b-form__title">записаться на ремонт стартера и генератора</h3>
+          <label class="b-prices__label">
+            <input class="b-form__input b-prices__input" name="name" type="text" placeholder="Ваше имя"/>
+          </label>
+          <label class="b-prices__label">
+            <input class="b-form__input b-prices__input" name="phone" type="text" placeholder="Номер телефона для связи"/>
+          </label>
+          <label class="b-prices__label">
+            <input class="b-form__input b-form__date datepicker-here js-datepicker b-prices__input" name="date" type="text" placeholder="Выберите дату"/><i class="fa fa-calendar"></i>
+          </label>
+          <label class="b-prices__label">
+            <select class="b-form__select js-select b-prices__input" name="time">
+              <option>Выберите время</option>
+            </select>
+          </label>
+          <textarea class="b-form__textarea b-prices__textarea" name="message" placeholder="Сообщение" rows="2"></textarea>
+          <button class="b-button b-button--sm b-button--accent b-prices__button" type="button"><span class="b-button__content">отправить</span></button>
+          <label class="b-checkbox b-policy">
+            <input class="b-checkbox__input" type="checkbox" name="policy"/>
+            <div class="b-checkbox__text b-checkbox__text--dark"><span>Нажимая на кнопку, я соглашаюсь с условиями&nbsp;</span><a href="#">политики конфиденциальности.</a></div>
+          </label>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="b-crash">
+    <div class="container">
+      <h2 class="b-crash__title">Признаки поломки</h2>
+      <div class="swiper-container js-crash-slider js-mob-slider">
+        <div class="swiper-wrapper b-crash__items">
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Загорается значок неисправности Check Engine</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Повышенный расход масла / падение давления масла</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Потеря мощности, повышенный расход топлива</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Троит при работе</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Заклинивание двигателя</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Излишняя вибрация</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Не заводится / глохнет</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Посторонние стук, гул или другой шум</p>
+          </div>
+          <div class="b-crash__item swiper-slide">
+            <div class="b-crash__icon"><img src="img/crash/triangle.svg"/></div>
+            <p class="b-crash__text">Перегрев двигателя</p>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination--red"></div>
+      </div>
+    </div>
+  </section>
+  <section class="b-fast-form">
+    <div class="container">
+      <div class="b-fast-form__container"><img class="b-fast-form__img" src=""/>
+        <form class="b-fast-form__form b-from">
+          <div class="b-fast-form__content">
+            <h2 class="b-form__title b-fast-form__title">Хотите быстро устранить неисправности вашего стартера и генератора?</h2>
+            <p class="b-form__subtitle b-fast-form__subtitle">Заполните короткую форму и старший специалист свяжется с Вами в течение 20 минут</p>
+          </div>
+          <div class="b-form__row">
+            <label class="b-form__label b-fast-form__label">
+              <input class="b-form__input" type="text" name="mark" placeholder="Марка и модель авто"/>
+            </label>
+            <label class="b-form__label b-fast-form__label">
+              <input class="b-form__input" type="text" name="name" placeholder="Ваше имя"/>
+            </label>
+            <label class="b-form__label b-fast-form__label">
+              <input class="b-form__input" type="text" name="phone" placeholder="Номер телефона для связи"/>
+            </label>
+          </div>
+          <div class="b-form__row">
+            <label class="b-checkbox b-policy">
+              <input class="b-checkbox__input" type="checkbox" name="policy"/>
+              <div class="b-checkbox__text b-checkbox__text--dark"><span>Нажимая на кнопку, я соглашаюсь с условиями&nbsp;</span><a href="#">политики конфиденциальности.</a></div>
+            </label>
+            <button class="b-button b-button--xm b-button--accent b-fast-form__button" type="button"><span class="b-button__content">записаться на ремонт</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="b-steps">
+    <div class="container">
+      <h2 class="b-steps__title">4 основных шага в ремонте стартеров и генераторов</h2>
+      <div class="swiper-container js-steps-slider js-mob-slider">
+        <div class="swiper-wrapper b-steps__items">
+          <div class="b-steps__item swiper-slide">
+            <div class="b-steps__icon"><img src="img/steps/1.svg"/></div><span class="b-steps__text">Диагностика</span>
+          </div>
+          <div class="b-steps__item swiper-slide">
+            <div class="b-steps__icon"><img src="img/steps/2.svg"/></div><span class="b-steps__text">Снятие двигателя, разбор и дефектовка</span>
+          </div>
+          <div class="b-steps__item swiper-slide">
+            <div class="b-steps__icon"><img src="img/steps/3.svg"/></div><span class="b-steps__text">Ремонт или замена, сборка</span>
+          </div>
+          <div class="b-steps__item swiper-slide">
+            <div class="b-steps__icon b-steps__icon--last"><img src="img/steps/4.svg"/></div><span class="b-steps__text">Проверка и настройка работы</span>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination--accent"></div>
+      </div>
+    </div>
+  </section>
+  <section class="b-reviews" id="reviews">
+    <div class="container">
+      <h2 class="b-reviews__title">отзывы</h2>
+      <div class="swiper-container js-reviews-slider js-mob-slider">
+        <div class="b-reviews__content swiper-wrapper">
+          <figure class="b-reviews__video b-reviews__video--big swiper-slide">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ti0IiWMWmjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <figcaption class="b-reviews__description">Как снять АКПП за 1 час в автосервисе GM-City</figcaption>
+          </figure>
+          <figure class="b-reviews__video swiper-slide">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ti0IiWMWmjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <figcaption class="b-reviews__description">Отзыв клиента об автосервисе GM-City</figcaption>
+          </figure>
+          <figure class="b-reviews__video swiper-slide">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ti0IiWMWmjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <figcaption class="b-reviews__description">Отзыв о техцентре GM-City - Шевроле Лачетти</figcaption>
+          </figure>
+          <figure class="b-reviews__video swiper-slide">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ti0IiWMWmjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <figcaption class="b-reviews__description">Отзыв об автосервисе GM-City и
+              очередном ТО</figcaption>
+          </figure>
+          <figure class="b-reviews__video swiper-slide">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ti0IiWMWmjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <figcaption class="b-reviews__description">Отзыв Алексея об GM-City и цены на работы</figcaption>
+          </figure>
+        </div>
+      </div><a class="b-button b-button--accent b-button--xsl b-reviews__button" href="#"><span class="b-button__content">смотреть все отзывы на нашем канале</span></a>
+    </div>
+  </section>
+  <section class="b-diagnostics">
+    <div class="container">
+      <div class="b-diagnostics__content b-diagnostics__content--vihlop">
+        <div class="b-diagnostics__info">
+          <h2 class="b-diagnostics__title"><span class="b-diagnostics__title--small">записаться на бесплатную</span><span class="b-diagnostics__title--small"> диагностику стартера и генератора</span><span class="b-diagnostics__title--big">мы вам поможем!</span></h2><span class="b-diagnostics__text">Мы найдем и устраним причину рывков, пробуксовок, шума <br> при работе двигателя</span>
+        </div>
+      </div>
+      <form class="b-from b-diagnostics__form">
+        <div class="b-form__row b-diagnostics__row">
+          <label class="b-form__label b-diagnostics__label">
+            <input class="b-input__form" type="text" name="car" placeholder="Марка и модель авто"/>
+          </label>
+          <label class="b-form__label b-diagnostics__label">
+            <input class="b-input__form" type="text" name="name" placeholder="Ваше имя"/>
+          </label>
+          <label class="b-form__label b-diagnostics__label">
+            <input class="b-input__form" type="text" name="phone" placeholder="Номер телефона для связи"/>
+          </label>
+          <div class="b-diagnostics__policy">
+            <label class="b-checkbox b-policy">
+              <input class="b-checkbox__input" type="checkbox" name="policy"/>
+              <div class="b-checkbox__text b-checkbox__text--dark"><span>Нажимая на кнопку, я соглашаюсь с условиями&nbsp;</span><a href="#">политики конфиденциальности.</a></div>
+            </label>
+          </div>
+          <button class="b-button b-button--xm b-button--accent b-diagnostics__button" type="button"><span class="b-button__content">Записаться</span></button>
+        </div>
+        <label class="b-checkbox b-policy">
+          <input class="b-checkbox__input" type="checkbox" name="policy"/>
+          <div class="b-checkbox__text b-checkbox__text--dark"><span>Нажимая на кнопку, я соглашаюсь с условиями&nbsp;</span><a href="#">политики конфиденциальности.</a></div>
+        </label>
+      </form>
+    </div>
+  </section>
+  <section class="b-slider">
+    <div class="container">
+      <h2 class="b-slider__title">Фото</h2>
+      <div class="b-slider__container">
+        <div class="js-slider swiper-container">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><img class="b-slider__img" src="img/slider/1.jpg"/></li>
+            <li class="swiper-slide"><img class="b-slider__img" src="img/slider/2.jpg"/></li>
+            <li class="swiper-slide"><img class="b-slider__img" src="img/slider/3.jpg"/></li>
+            <li class="swiper-slide"><img class="b-slider__img" src="img/slider/4.jpg"/></li>
+            <li class="swiper-slide"><img class="b-slider__img" src="img/slider/5.jpg"/></li>
+          </ul>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="button-prev b-slider__nav">
+          <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+              <g>
+                <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225                    c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
+              </g>
+            </svg>
+        </div>
+        <div class="button-next b-slider__nav">
+          <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+              <g>
+                <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z                    "></path>
+              </g>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="b-info">
+    <div class="container">
+      <div class="b-info__items"><a class="b-info__item" href="#"><span class="b-info__text">Ремонт АКПП</span></a><a class="b-info__item" href="#"><span class="b-info__text">Ремонт стартеров и генераторов</span></a><a class="b-info__item" href="#"><span class="b-info__text">Ремонт рулевого управления</span></a><a class="b-info__item" href="#"><span class="b-info__text">Капитальный ремонт двигателя</span></a><a class="b-info__item" href="#"><span class="b-info__text">Ремонт топливной системы, топливных наносов</span></a><a class="b-info__item" href="#"><span class="b-info__text">Ремонт стартеров и генераторов</span></a><a class="b-info__item" href="#"><span class="b-info__text">Электрика, программирование блоков эбу</span></a><a class="b-info__item" href="#"><span class="b-info__text">Ремонт выхлопной системы, катализаторов, установка пламягасителей</span></a></div>
+    </div>
+  </section>
+  <section class="b-map" id="contacts">
+    <!--include ../components/tooltip-->
+    <div id="map"></div>
+  </section>
+  <footer class="b-footer">
+    <div class="container">
+      <div class="b-footer__content">
+        <div class="b-footer__logo">
+          <svg width="149" height="40" viewbox="0 0 149 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6473 21.566L13.8319 25.6823H16.0968C15.7344 27.651 14.5567 28.6353 12.5636 28.6353C11.2953 28.6353 10.3893 28.1879 9.84576 27.3825C9.30219 26.4877 9.30219 24.877 9.75516 22.5503C10.2081 20.1342 10.8423 18.5235 11.6577 17.6286C12.473 16.7338 13.5602 16.2864 15.0097 16.2864C16.0062 16.2864 16.8216 16.5548 17.4558 17.0022C18.0899 17.4497 18.5429 18.1655 18.8147 19.1499H24.0692L25.5187 11.5436H20.2642L19.9924 12.9754C18.7241 11.6331 16.731 11.0067 14.0131 11.0067C10.7517 11.0067 7.85266 12.0805 5.2254 14.1387C2.59814 16.1969 0.967428 18.9709 0.242666 22.2819C-0.21031 24.519 -0.0291198 26.4877 0.786237 28.3669C1.511 30.1566 2.86993 31.4989 4.77243 32.3042C6.67493 33.1096 8.75862 33.557 11.2953 33.557C12.926 33.557 14.5567 33.2886 16.0968 32.7517C17.6369 32.2148 19.0865 31.4094 20.2642 30.2461C21.5325 29.0828 22.4385 28.0089 22.9821 26.8456C23.5256 25.6823 24.0692 23.8926 24.5222 21.566H14.6473ZM47.2616 11.4541L42.3694 19.8658L40.7387 11.4541H27.5118L26.5153 16.6443H28.2366L26.0623 27.9195H24.341L23.3444 33.1096H31.8604L32.8569 27.9195H31.1356L33.4005 15.9284L36.6619 33.1096H39.9234L49.8888 15.8389L47.5334 27.9195H45.8121L44.8155 33.1096H56.2305L57.2271 27.9195H55.4151L57.5894 16.6443H59.3108L60.3073 11.4541H47.2616ZM60.0355 28.9038H71.2693L72.5377 22.1924H61.3038L60.0355 28.9038ZM90.0225 16.1969C90.9285 16.1969 91.5626 16.4653 92.1968 17.0022C92.7404 17.5391 93.1028 18.3445 93.1934 19.3289H98.6291L100.169 11.4541H94.9147L94.6429 12.8859C93.284 11.6331 91.2909 11.0067 88.7542 11.0067C85.5834 11.0067 82.7749 12.0805 80.4194 14.3177C77.9734 16.4653 76.5238 19.1499 75.8897 22.2819C75.2555 25.4139 75.7991 28.0089 77.4298 30.1566C79.0605 32.3042 81.9596 33.3781 86.1269 33.3781C89.2072 33.3781 91.7438 32.6622 93.8275 31.1409C95.8206 29.7092 97.3607 27.7405 98.2667 25.4139L92.9216 23.4452C91.7438 26.5772 90.1131 28.1879 87.9388 28.1879C85.4928 28.1879 84.6774 26.1298 85.4022 22.1029C86.0363 18.255 87.6671 16.1969 90.0225 16.1969ZM124.539 11.9911L115.933 15.7494L115.48 18.0761H113.487L112.581 22.8188H114.574L114.121 25.3244C113.758 27.2931 113.487 28.6353 113.487 29.2617C113.487 29.6197 113.487 29.9776 113.577 30.3356C113.668 30.6935 113.758 30.962 113.94 31.4094C114.211 32.0358 114.846 32.5727 115.57 33.0201C116.386 33.3781 117.292 33.557 118.56 33.557C119.466 33.557 120.553 33.3781 121.64 33.1096C122.637 32.8412 123.452 32.5727 124.086 32.2148L124.992 27.5615C124.177 27.9195 123.543 28.0089 122.999 28.0089C122.456 28.0089 122.093 27.83 122.003 27.5615C121.912 27.2036 121.912 26.5772 122.093 25.6823L122.637 22.7293H125.808L126.714 17.9866H123.543L124.539 11.9911ZM141.118 17.9866L140.212 22.7293H141.662L138.038 28.6353L136.498 22.7293H138.219L139.125 17.9866H128.707L127.801 22.7293H128.978L132.693 33.915L131.606 35.4362H129.069L128.163 40H134.867L146.554 22.7293H148.094L149 17.9866H141.118ZM111.856 5.81655L111.494 5.10067L107.236 4.20582L106.601 4.74273L104.427 14.0492L110.135 15.2125L111.856 5.81655ZM110.95 3.13199L111.041 1.87919L111.403 0.98434L111.494 0.626398L109.048 0L108.957 0.447427V1.43177L108.504 2.59508L108.323 3.93736L110.588 4.47427L110.95 3.13199ZM111.131 16.3758C111.222 16.1074 111.041 15.9284 110.769 15.8389L103.431 14.3177C103.159 14.3177 102.978 14.4072 102.887 14.6756L102.796 15.2125L101.619 14.9441L101.075 17.4497C104.608 18.1655 108.232 18.8814 111.765 19.6868L112.309 17.1812L111.131 16.9128V16.3758ZM110.406 19.9553L102.162 18.255L101.981 18.9709L101.256 18.7919L100.26 23.4452L109.953 25.4139L110.95 20.7606L110.225 20.5817L110.406 19.9553ZM101.256 24.6085C101.438 24.698 101.438 24.877 101.438 25.0559C101.438 25.2349 101.256 25.3244 101.075 25.4139L100.985 25.6823C101.166 25.7718 101.166 25.9508 101.166 26.1298C101.166 26.3087 100.985 26.3982 100.803 26.4877L100.713 26.7562C100.894 26.8456 100.894 27.0246 100.894 27.2036C100.894 27.3825 100.713 27.472 100.532 27.5615L100.622 27.7405C100.803 27.83 100.803 28.0089 100.803 28.1879C100.803 28.3669 100.622 28.4564 100.441 28.5459L100.35 28.8143C100.532 28.9038 100.532 29.0828 100.532 29.2617C100.532 29.4407 100.35 29.5302 100.169 29.6197L100.079 29.8881C100.26 29.9776 100.26 30.1566 100.26 30.3356C100.26 30.5145 100.079 30.604 99.8974 30.6935L99.8068 30.962C99.988 31.0514 99.988 31.2304 99.988 31.4094C99.988 31.5884 99.8068 31.6779 99.6256 31.7673L99.4444 32.8412C99.6256 32.9306 99.8974 33.0201 100.079 33.1991V33.2886C99.8068 34.3624 100.26 35.0783 101.619 35.3468L103.793 35.7942L103.974 35.0783L101.8 34.6309C100.985 34.4519 100.713 34.094 100.803 33.557C101.438 33.8255 101.981 34.0045 102.615 34.094L102.525 34.5414L103.431 34.7204L103.521 34.2729C104.608 34.4519 105.786 34.5414 106.873 34.4519L107.054 33.3781C106.873 33.2886 106.873 33.1096 106.873 32.9306C106.873 32.7517 107.054 32.6622 107.236 32.5727L107.326 32.3042C107.145 32.2148 107.145 32.0358 107.145 31.8568C107.145 31.6779 107.326 31.5884 107.507 31.4989L107.598 31.2304C107.417 31.1409 107.417 30.962 107.417 30.783C107.417 30.604 107.598 30.5145 107.779 30.4251L107.87 30.1566C107.689 30.0671 107.689 29.8881 107.689 29.7092C107.689 29.5302 107.87 29.4407 108.051 29.3512L108.142 29.0828C107.96 28.9933 107.96 28.8143 107.96 28.6353C107.96 28.4564 108.142 28.3669 108.323 28.2774L108.413 28.0089C108.232 27.9195 108.232 27.7405 108.232 27.5615C108.232 27.3825 108.413 27.2931 108.595 27.2036L108.685 26.9351C108.504 26.8456 108.504 26.6667 108.504 26.4877C108.504 26.3087 108.685 26.2192 108.866 26.1298L108.957 25.8613L101.528 24.34L101.256 24.6085Z" fill="#363636"></path>
+          </svg><span class="b-footer__text">ремонт и замена АКПП в автомобилях Шевроле</span>
+        </div>
+        <nav class="b-footer__nav b-nav"><a class="b-nav__link uppercase" href="#about">О компании</a><a class="b-nav__link uppercase" href="#prices">Услуги</a><a class="b-nav__link uppercase" href="#calculator">Калькулятор</a><a class="b-nav__link uppercase" href="#prices">Цены</a><a class="b-nav__link uppercase" href="#reviews">Отзывы</a><a class="b-nav__link uppercase" href="#contacts">Контакты</a>
+        </nav>
+        <div class="b-socials b-footer__socials"><a class="b-footer__social b-footer__social--instagram" href="#"><i class="fa fa-instagram"></i></a><a class="b-footer__social b-footer__social--youtube" href="#"><i class="fa fa-youtube-play"></i></a><a class="b-footer__social b-footer__social--telegram" href="#"><i class="fa fa-paper-plane"></i></a><a class="b-footer__social b-footer__social--vk" href="#"><i class="fa fa-vk"></i></a>
+        </div>
+      </div><span class="b-footer__copy">© 2000-2019 GM-City Ремонт автобилей Шевроле</span>
+    </div>
+  </footer>
+  <div class="b-popup b-popup--send">
+    <div class="b-popup__overlay js-close-popup"></div>
+    <div class="b-popup__content">
+      <div class="b-popup__close js-close-popup">
+        <svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.353591 0.646485L13.7886 14.0815M0.353516 14.0815L13.7885 0.646484" stroke="white"></path>
+        </svg>
+      </div>
+      <h4 class="b-popup__title">обратный звонок</h4>
+      <form class="b-form b-popup__form">
+        <input class="b-form__input b-popup__input" name="name" type="text" placeholder="Ваше имя"/>
+        <input class="b-form__input b-popup__input" name="phone" type="text" placeholder="Номер телефона для связи"/>
+        <input class="b-form__input b-popup__input" name="time" type="text" placeholder="Удобное время для звонка"/>
+        <button class="b-button b-button--sm b-button--accent b-popup__button js-send-form" type="button"><span class="b-button__content">отправить</span></button>
+        <label class="b-checkbox b-policy">
+          <input class="b-checkbox__input" type="checkbox" name="policy"/>
+          <div class="b-checkbox__text b-checkbox__text--dark"><span>Нажимая на кнопку, я соглашаюсь с условиями&nbsp;</span><a href="#">политики конфиденциальности.</a></div>
+        </label>
+      </form>
+    </div>
+  </div>
+  <div class="b-popup b-popup--thanks">
+    <div class="b-popup__overlay js-close-popup"></div>
+    <div class="b-popup__content b-popup__content--thanks">
+      <div class="b-popup__close js-close-popup">
+        <svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.353591 0.646485L13.7886 14.0815M0.353516 14.0815L13.7885 0.646484" stroke="white"></path>
+        </svg>
+      </div>
+      <h4 class="b-popup__title">сообщение успешно отправлено</h4>
+      <button class="b-button b-button--sm b-button--accent b-popup__button js-close-popup" type="button"><span class="b-button__content">ок</span></button>
+    </div>
+  </div><a class="b-up" href="#header"><i class="fa fa-chevron-up"></i></a>
+  <!--include components/tooltip-->
+</main>
+<script src="js/scripts.min.js"></script>
+</body>
